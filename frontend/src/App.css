@@ -1,0 +1,36 @@
+
+@font-face{
+  font-family:'Gotham';
+  src: url(../src/assets/font/GothamBold.ttf);
+}
+
+@font-face{
+  font-family:'Gotham-light';
+  src: url(../src/assets/font/GothamLight.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+.App {
+  min-height: 100vh;
+  height: auto;
+  text-align: center;
+  font-family:'Gotham';
+  color: #D6E1EF;
+      overflow: hidden;
+      /* background: linear-gradient(157.73deg, rgb(15, 17, 19) -0.68%, #0d0f11 74.03%);
+      background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%); */
+      background: linear-gradient(114.42deg, #191D20 -2.83%, #191D20 166.43%);
+}
+
+button{
+  outline: none;
+}
+a:link{
+  color: #D6E1EF;
+  text-decoration: none;
+}
+a:visited{
+  color: #D6E1EF;
+}
+a:hover{
+  color: rgb(148, 157, 168)!important;
+}

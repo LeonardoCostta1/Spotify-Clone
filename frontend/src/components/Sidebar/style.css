@@ -1,0 +1,17 @@
+.sidebar_wrapper { width: 250px; min-height: calc(100vh - 80px); height: auto; border-right: 1px solid #eeeeee0e; }
+.sidebar_wrapper .top_wrapper .box_container { text-align: left; text-transform: capitalize; font-size: 12px; }
+.sidebar_wrapper .top_wrapper .box_container:nth-child(1) { margin-top: 30px; font-size: 14px; font-weight: bold; }
+.sidebar_wrapper .top_wrapper .box_container:nth-child(1) i { margin-right: 10px; }
+.sidebar_wrapper .top_wrapper .box_container:nth-child(3) { overflow-y: scroll; height: 300px; padding-bottom: 20px; /* width */ /* Track */ /* Handle */ }
+.sidebar_wrapper .top_wrapper .box_container:nth-child(3)::-webkit-scrollbar { width: 5px; }
+.sidebar_wrapper .top_wrapper .box_container:nth-child(3)::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0); }
+.sidebar_wrapper .top_wrapper .box_container:nth-child(3)::-webkit-scrollbar-thumb { background: linear-gradient(89.88deg, #51585F -38.44%, #070808 236.51%); box-shadow: -1px 2px 2px rgba(15, 18, 22, 0.6), inset 0px -2px 1px #0E1216, inset 0px 0px 4px rgba(11, 15, 18, 0.22); backdrop-filter: blur(28px); /* Note: backdrop-filter has minimal browser support */ border-radius: 26px; }
+.sidebar_wrapper .top_wrapper .box_container ul { line-height: 25px; }
+.sidebar_wrapper .top_wrapper .box_container ul li { list-style: none; font-family: 'Open Sans', sans-serif; transition: .3s; cursor: pointer; text-transform: capitalize; }
+.sidebar_wrapper .top_wrapper .box_container ul li:hover { background: #262B2F; }
+.sidebar_wrapper .top_wrapper .box_container .title_category { text-transform: uppercase; margin-bottom: 10px; font-size: 12px; }
+.sidebar_wrapper .top_wrapper .box_container .add_playlist_wrapper { display: flex; align-items: center; justify-content: flex-start; margin-bottom: 5px; text-transform: capitalize; }
+.sidebar_wrapper .top_wrapper .box_container .add_playlist_wrapper .box_add { height: 40px; width: 40px; background: #fff; color: #191D20; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 30px; font-weight: 500; font-family: 'Open Sans', sans-serif; }
+.sidebar_wrapper .top_wrapper .box_container .add_playlist_wrapper .box_add img { width: 20px; }
+
+/*# sourceMappingURL=style.css.map */

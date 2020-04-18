@@ -1,0 +1,166 @@
+$color:#ffffff;
+$colorSpotify:#F06500;
+$height:80px;
+
+.player_wrapper{
+    height: $height;
+    width: 100%;
+    background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    .info_music_container{
+        width: 25%;
+        height: $height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .info_wrapper{
+            width: 80%;
+            height: $height;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+    
+            .cover{
+
+                height: 50px;
+                width: 50px;
+                background: #777;
+                margin-right: 10px;
+                img{
+                    width: 100%;
+                }
+            }
+            .info{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                text-transform: capitalize;
+        
+                .music{
+
+                }
+                .artist{
+
+                    font-family:'Gotham-light';
+                }
+            }
+
+        }
+
+    }
+
+    .player_container{
+        width: 50%;
+        height:$height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .player_buttons_wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                button{
+                    border: none;
+                    background: none;
+                    width:30px;
+                    height:30px;
+                    margin: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 20px;
+        
+                    }
+                }
+
+        }
+        .seekbar_wrapper{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            .seek_container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                .seek_bg{
+                    height: 4px;
+                    width: 80%;
+                    // background: #fff;
+                    margin: 0px 10px;
+                    background: linear-gradient(344.2deg, #2C333A -71.57%, #1C1E22 59.28%, #121416 59.28%);
+                    box-shadow: inset 2px 3px 10px #070709, inset -2px -2px 10px rgba(255, 255, 255, 0.05);
+                    border-radius: 31px;
+                    .seek{
+                        height: 4px;
+                        width: 30%;
+                       
+                        background: linear-gradient(88.49deg, $colorSpotify -4.95%, #587CA5 578.66%);
+                    
+                        backdrop-filter: blur(28px);
+                        /* Note: backdrop-filter has minimal browser support */
+                        border-radius: 26px;
+                        box-shadow: -16px 28px 120px rgba(244, 102, 0, 0.1), -2px 2px 24px rgba(255, 144, 64, 0.6), -16px 20px 40px rgba(244, 102, 0, 0.3);
+                    }
+                }
+                .time_music{
+                    font-size: 9px;
+                }
+            }
+
+        }
+    }
+
+    .volume_container{
+        width: 25%;
+        height: $height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            border: none;
+            background: none;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 20px;
+
+            }
+        }
+        .volume_wrapper{
+            height: 4px;
+            width: 50%;
+            background: linear-gradient(344.2deg, #2C333A -71.57%, #1C1E22 59.28%, #121416 59.28%);
+            box-shadow: inset 2px 3px 10px #070709, inset -2px -2px 10px rgba(255, 255, 255, 0.05);
+            border-radius: 31px;
+            
+            .volume{
+                height: 4px;
+                width: 50%;
+                // background: $colorSpotify;
+
+                            background: linear-gradient(88.49deg, $colorSpotify -4.95%, #587CA5 578.66%);
+                            box-shadow: -16px 28px 120px rgba(244, 102, 0, 0.1), -2px 2px 24px rgba(255, 144, 64, 0.6), -16px 20px 40px rgba(244, 102, 0, 0.3);
+                            backdrop-filter: blur(28px);
+                            /* Note: backdrop-filter has minimal browser support */
+                            border-radius: 26px;
+            }
+        }
+    }
+}
