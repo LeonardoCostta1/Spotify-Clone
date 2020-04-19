@@ -16,8 +16,6 @@
   font-family:'Gotham';
   color: #D6E1EF;
       overflow: hidden;
-      /* background: linear-gradient(157.73deg, rgb(15, 17, 19) -0.68%, #0d0f11 74.03%);
-      background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%); */
       background: linear-gradient(114.42deg, #191D20 -2.83%, #191D20 166.43%);
 }
 
@@ -33,4 +31,14 @@ a:visited{
 }
 a:hover{
   color: rgb(148, 157, 168)!important;
+}
+.loading{
+  height:calc(100vh - 80px);
+  width:calc(100% - 250px) ;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #191D20 ;
+
 }

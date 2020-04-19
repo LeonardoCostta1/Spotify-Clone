@@ -1,11 +1,13 @@
 .main_wrapper { min-height: calc(100vh - 80px); width: calc(100% - 250px); padding-bottom: 50px; }
-.main_wrapper .main_container { height: calc(100vh - 40px); width: calc(100% - 40px); margin: 0 auto; margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: space-evenly; }
-.main_wrapper .main_container .box_artist { width: 200px; height: 270px; border-radius: 10px; background: #262B2F; padding: 20px; text-align: left; text-transform: capitalize; flex-basis: 200px; position: relative; cursor: pointer; transition: .3s; overflow: hidden; }
-.main_wrapper .main_container .box_artist .photo_artist { height: 160px; width: 160px; display: block; background: #33393f; margin: 0 auto; margin-bottom: 30px; }
-.main_wrapper .main_container .box_artist .photo_artist img { width: 100%; }
-.main_wrapper .main_container .box_artist .genre_artist { font-size: 12px; font-family: 'Gotham-light'; }
-.main_wrapper .main_container .box_artist .ball_play { height: 40px; width: 40px; border-radius: 40px; display: flex; align-items: center; justify-content: center; background: #F06500; position: absolute; bottom: 20px; right: 20px; display: none; transition: .3s; }
-.main_wrapper .main_container .box_artist .ball_play img { width: 10px; }
-.main_wrapper .main_container .box_artist:hover .ball_play { display: flex; position: absolute; }
+.main_wrapper .main_container { height: calc(100vh - 40px); width: calc(100% - 40px); margin: 0 auto; margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+.main_wrapper .main_container .title_category { font-size: 2rem; text-transform: capitalize; height: 50px; text-align: left; padding-left: 10px; }
+.main_wrapper .main_container .cards_artist { display: flex; flex-wrap: wrap; justify-content: space-evenly; margin-bottom: 80px; }
+.main_wrapper .main_container .cards_artist .box_artist { width: 200px; height: 270px; border-radius: 10px; background: #262B2F; padding: 20px; text-align: left; text-transform: capitalize; flex-basis: 200px; position: relative; cursor: pointer; transition: .3s; overflow: hidden; margin-bottom: 15px; }
+.main_wrapper .main_container .cards_artist .box_artist .photo_artist { height: 160px; width: 160px; display: block; background: #33393f; margin: 0 auto; margin-bottom: 30px; }
+.main_wrapper .main_container .cards_artist .box_artist .photo_artist img { width: 100%; }
+.main_wrapper .main_container .cards_artist .box_artist .genre_artist { font-size: 12px; font-family: 'Gotham-light'; }
+.main_wrapper .main_container .cards_artist .box_artist .ball_play { height: 40px; width: 40px; border-radius: 40px; display: flex; align-items: center; justify-content: center; background: #F06500; position: absolute; bottom: 20px; right: 20px; display: none; transition: .3s; }
+.main_wrapper .main_container .cards_artist .box_artist .ball_play img { width: 10px; }
+.main_wrapper .main_container .cards_artist .box_artist:hover .ball_play { display: flex; position: absolute; }
 
 /*# sourceMappingURL=style.css.map */

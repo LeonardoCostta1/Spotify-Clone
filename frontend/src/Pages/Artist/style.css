@@ -24,11 +24,11 @@
 .artist_wrapper .overview_wrapper .overview_menu ul li:hover { color: #fff; }
 .artist_wrapper .overview_wrapper .overview_menu ul .active { color: #fff; border-bottom: 3px solid #F06500; }
 .artist_wrapper .playlist_wrapper { min-height: 200px; height: auto; width: calc(100% - 80px); display: flex; align-items: flex-start; justify-content: flex-start; padding-bottom: 10px; margin: 0 auto; }
-.artist_wrapper .playlist_wrapper .playlist { display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; margin-top: 30px; min-width: 50%; width: auto; margin-right: 40px; }
+.artist_wrapper .playlist_wrapper .playlist { display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; margin-top: 30px; min-width: 100%; width: auto; margin-bottom: 40px; margin-right: 40px; }
 .artist_wrapper .playlist_wrapper .playlist .title_category_wrapper { width: 100%; display: flex; align-items: center; justify-content: space-between; }
 .artist_wrapper .playlist_wrapper .playlist .title_category_wrapper .title_category { text-transform: uppercase; margin-bottom: 20px; }
 .artist_wrapper .playlist_wrapper .playlist .title_category_wrapper .title_category:nth-child(2) { margin-right: 10px; }
-.artist_wrapper .playlist_wrapper .playlist .track_playlist { width: 100%; display: flex; align-items: center; justify-content: space-between; margin: 3px 0px; transition: .3s; cursor: pointer; }
+.artist_wrapper .playlist_wrapper .playlist .track_playlist { width: 100%; display: flex; align-items: center; justify-content: space-between; height: 60px; transition: .3s; cursor: pointer; border-bottom: 1px solid rgba(50, 56, 62, 0.267); }
 .artist_wrapper .playlist_wrapper .playlist .track_playlist:hover { background: #262B2F; }
 .artist_wrapper .playlist_wrapper .playlist .track_playlist .left { display: flex; align-items: center; justify-content: center; }
 .artist_wrapper .playlist_wrapper .playlist .track_playlist .left .cover { height: 40px; width: 40px; background: #eee; margin-right: 10px; }

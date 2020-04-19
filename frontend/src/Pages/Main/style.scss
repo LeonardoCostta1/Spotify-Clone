@@ -5,81 +5,97 @@ $colorSpotify:#F06500;
     padding-bottom: 50px;
 
     .main_container{
-        // border: 1px solid #ff0028;
         height: calc(100vh - 40px);
         width:calc(100% - 40px);
         margin: 0 auto;
         margin-top: 40px;;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content:flex-start;
+        // flex-direction: column;;
         // align-items: flex-start;
         // overflow-y: scroll;
-
-
-        .box_artist{
-            width: 200px;
-            height: 270px;
-            border-radius: 10px;
-            background: #262B2F;
-            padding: 20px;
-            text-align: left;
+        .title_category{
+            font-size: 2rem;
             text-transform: capitalize;
-            flex-basis: 200px;
-            position: relative;
-            cursor: pointer;
-            transition: .3s;
-            overflow: hidden;
-            .photo_artist{
-                height: 160px;
-                width: 160px;
-                // border-radius: 150px;
-                display: block;
-                background: rgb(51, 57, 63);
-                margin: 0 auto;
-                margin-bottom: 30px;
-                img{
-                    width: 100%;
-                }
-            }
-
-            .name_artist{
-
-            }
-            .genre_artist{
-                font-size: 12px;
-                font-family:'Gotham-light';
-                
-            }
-
-            .ball_play{
-                height: 40px;
-                width: 40px;
-                border-radius: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background:$colorSpotify ;
-                position: absolute;
-                bottom:20px;
-                right: 20px;
-                display: none;
-                transition: .3s;
-                img{
-                    width:10px;
-                }
-            }
-
-            &:hover{
-                // transform: scale(1.01);
-                .ball_play{
-                    display: flex;
-                    position: absolute;
-                }
-            }
+            height: 50px;
+            text-align: left;
+            padding-left: 10px;
             
-
         }
+        .cards_artist{
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-bottom: 80px;
+            .box_artist{
+                width: 200px;
+                height: 270px;
+                border-radius: 10px;
+                background: #262B2F;
+                padding: 20px;
+                text-align: left;
+                text-transform: capitalize;
+                flex-basis: 200px;
+                position: relative;
+                cursor: pointer;
+                transition: .3s;
+                overflow: hidden;
+                margin-bottom: 15px;
+                .photo_artist{
+                    height: 160px;
+                    width: 160px;
+                    // border-radius: 150px;
+                    display: block;
+                    background: rgb(51, 57, 63);
+                    margin: 0 auto;
+                    margin-bottom: 30px;
+                    img{
+                        width: 100%;
+                    }
+                }
+    
+                .name_artist{
+    
+                }
+                .genre_artist{
+                    font-size: 12px;
+                    font-family:'Gotham-light';
+                    
+                }
+    
+                .ball_play{
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background:$colorSpotify ;
+                    position: absolute;
+                    bottom:20px;
+                    right: 20px;
+                    display: none;
+                    transition: .3s;
+                    img{
+                        width:10px;
+                    }
+                }
+    
+                &:hover{
+                    // transform: scale(1.01);
+                    .ball_play{
+                        display: flex;
+                        position: absolute;
+                    }
+                }
+                
+    
+            }
+        }
+
+       
     }
 
 }

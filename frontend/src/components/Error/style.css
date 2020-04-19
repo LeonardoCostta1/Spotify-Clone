@@ -1,0 +1,10 @@
+.error_wrapper{
+    height: calc(100vh - 80px);
+    width:calc(100% - 250px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    flex-direction: column;
+}

@@ -12,7 +12,7 @@ export default function Sidebar() {
                 <ul>
                 <div className="title_category">sua biblioteca</div>
                     <Link to='/'><li><i className="fas fa-home"></i> Home</li></Link>
-                    <li><i className="fas fa-search"></i> search</li>
+                    {/* <li><i className="fas fa-search"></i> search</li> */}
                 </ul>
             </div>
 
