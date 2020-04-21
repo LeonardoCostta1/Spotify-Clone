@@ -4,7 +4,7 @@ import axios from 'axios'
 import play from '../../assets/img/play.svg'
 import heart from '../../assets/img/heart.svg'
 import likedo from '../../assets/img/like.svg'
-// import cover from '../../assets/img/cover.jpg'
+import {useDispatch} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import $ from 'jquery'
 import {useParams} from 'react-router-dom'
@@ -64,6 +64,12 @@ let { id } = useParams();
 
   },[id]);
 
+  const dispatch = useDispatch()
+
+  function addTrack(track){
+    dispatch({type:"ADD_TRACK", music:track})
+  }
+
 
       if(!redirect){
         return (
@@ -101,7 +107,6 @@ let { id } = useParams();
 
 
 
-
           <div className="overview_wrapper">
             <div className="overview_menu">
               <ul>
@@ -121,7 +126,13 @@ let { id } = useParams();
       
               {tracks.map((item)=>{
                 return(
-                  <div className="track_playlist">
+                  <div className="track_playlist"onClick={()=> addTrack({ 
+                    
+                  track:item.url,
+                  musica:item.nome_musica,
+                  artist:item.artista_musica,
+                  album:item.foto_musica})}>
+
                   <div className="left">
                     <div className='cover'>
                       <img key={item.id_musicasid_musicas} src={item.foto_musica} alt="cover"/>

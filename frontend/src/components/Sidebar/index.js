@@ -38,9 +38,7 @@ export default function Sidebar() {
                     <li>hip hop</li>
                     <li>trap</li>
                     <li>R&B</li>
-                    <li>Sertanejo</li>
-                    <li>axé</li>
-                    <li>forro</li>
+          
                 </ul>
             </div>
         </div>
