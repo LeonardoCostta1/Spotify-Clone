@@ -14,9 +14,16 @@ export default function Player() {
     const [ next] = useState(nextImg);
     const [ volume] = useState(volumeImg);
     const [ cover] = useState(coverimg);
+
+    function playAudio(){
+        const audioEl = document.getElementsByClassName("audio")[0]
+        audioEl.play()
+      }
   return (
     <div className="player_wrapper">
-
+        <audio className="audio">
+          <source src="https://api.coderrocketfuel.com/assets/pomodoro-times-up.mp3"></source>
+        </audio>
         <div className="info_music_container">
             <div className="info_wrapper">
                 <div className="cover">
@@ -32,7 +39,7 @@ export default function Player() {
         <div className="player_container">
             <div className="player_buttons_wrapper">
                 <button><img src={prev} alt="prev"/></button>
-                <button><img src={play} alt="play"/></button>
+                <button onClick={playAudio}><img src={play} alt="play"/></button>
                 <button><img src={next} alt="prev"/></button>
             </div>
             <div className="seekbar_wrapper">

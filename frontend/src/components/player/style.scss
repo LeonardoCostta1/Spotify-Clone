@@ -79,10 +79,17 @@ $height:80px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    transition: .3s;
+                    cursor: pointer;
+                    border-radius: 50px;
                     img{
                         width: 20px;
         
                     }
+                    &:hover{
+                        background: #191D20;
+                    }
+
                 }
 
         }
