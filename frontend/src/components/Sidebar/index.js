@@ -10,9 +10,9 @@ export default function Sidebar() {
         <div className="top_wrapper">
             <div className="box_container">
                 <ul>
-                <div className="title_category">sua biblioteca</div>
                     <Link to='/'><li><i className="fas fa-home"></i> Home</li></Link>
-                    {/* <li><i className="fas fa-search"></i> search</li> */}
+                    <li><i className="fas fa-search"></i> search</li>
+                    <li><i className="fas fa-podcast"></i> radio</li>
                 </ul>
             </div>
 

@@ -53,13 +53,15 @@ $colorSpotify:#00D949;
 
 
             ul{
-                line-height: 25px;
+                line-height: 40px;
                 li{
                     list-style: none;
                     font-family: 'Open Sans', sans-serif;
                     transition: .3s;
                     cursor: pointer;
                     text-transform: capitalize;
+                    color: #868d95;
+                    height: 40px;
                     &:hover{
                         background: #262B2F;
                     }
@@ -70,6 +72,9 @@ $colorSpotify:#00D949;
                 text-transform: uppercase;
                 margin-bottom: 10px;
                 font-size: 12px;
+                position: relative;
+                left: -10px;
+                letter-spacing: 1px;
 
             }
 
@@ -79,20 +84,21 @@ $colorSpotify:#00D949;
                 justify-content: flex-start;
                 margin-bottom: 5px;
                 text-transform: capitalize;
+                color: #868d95;
                 .box_add{
-                    height: 40px;
-                    width: 40px;
+                    height: 30px;
+                    width: 30px;
                     background: #fff;
                     color: #191D20;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-right: 10px;
+                    margin:5px 10px 0px 0px;
                     font-size: 30px;
                     font-weight: 500;
                     font-family: 'Open Sans', sans-serif;
                     img{
-                        width: 20px;
+                        width: 15px;
                     }
                 }
             }

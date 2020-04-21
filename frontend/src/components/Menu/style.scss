@@ -6,8 +6,8 @@ $height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%);
-    border-bottom: 1px solid #262B2F ;
+    // background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%);
+    border-bottom: 1px solid #eeeeee0e ;
 
     .logo_wrapper{
         height: $height;
@@ -50,8 +50,8 @@ $height: 60px;
     margin-right: 50px;
 
     .user_photo{
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         margin-right: 10px;
         background: #999;
         border-radius: 30px;

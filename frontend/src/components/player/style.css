@@ -1,4 +1,4 @@
-.player_wrapper { height: 80px; width: 100%; background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%); position: fixed; bottom: 0; display: flex; justify-content: center; align-items: center; }
+.player_wrapper { height: 80px; width: 100%; background: linear-gradient(114.42deg, #262B2F -2.83%, #16191D 166.43%); position: fixed; bottom: 0; display: flex; justify-content: center; align-items: center; border-top: 1px solid #eeeeee0e; }
 .player_wrapper .info_music_container { width: 25%; height: 80px; display: flex; justify-content: center; align-items: center; }
 .player_wrapper .info_music_container .info_wrapper { width: 80%; height: 80px; display: flex; justify-content: center; align-items: center; font-size: 14px; }
 .player_wrapper .info_music_container .info_wrapper .cover { height: 50px; width: 50px; background: #777; margin-right: 10px; }

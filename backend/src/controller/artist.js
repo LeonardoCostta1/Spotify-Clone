@@ -3,37 +3,36 @@ const connection = require('../db/connection');
 module.exports = {
 
     async index(request,response){
-        const token = request.body.token
         const id = request.params.id
-        if(token === "09071993"){
-            await connection.query(`SELECT * FROM artista INNER JOIN musicas ON artista.id_artista = musicas.id_artista WHERE artista.id_artista = ${id}`,(err,rows,field)=>{
-            response.json(rows);
+
+        // SELECT * FROM artista INNER JOIN musicas ON artista.id_artista = musicas.id_artista WHERE artista.id_artista = ${id}; 
+
+        const profile = `SELECT * FROM artista WHERE id_artista = ${id}; SELECT * FROM albuns WHERE artista_id_artista = ${id}; SELECT * FROM musicas WHERE id_artista = ${id} `
+
+        await connection.query(profile,[0,1,2],(err,rows,field)=>{
+            if(err){
+                console.log(field);
+                return;
+            }
+
+            response.json([rows[0],rows[1],rows[2]]
+            
+            );
             });
-        }else{
-            response.json({'artists':"ERRO"});
-        }
        },
 
     async artistas(request,response){
-        const token = request.body.token
 
-        if(token === "09071993"){
-            await connection.query('SELECT * FROM artista ORDER BY nome_artista',(err,rows,field)=>{
+        await connection.query('SELECT * FROM artista ORDER BY nome_artista',(err,rows,field)=>{
+            if(err){
+                console.log(field);
+                return;
+            }
+
             response.json(rows);
-            });
-        }else{
-            response.json({'artists':"ERRO"});
-        }
-       },
-    async multiple(request,response){
+            
+        });
 
-        const sql = 'SELECT * FROM artista;SELECT * FROM musicas'
-        await connection.query(sql,[0,1],(err,rows,field)=>{
-            response.json({
-                'artistas':rows[0],
-                'musicias':rows[1]
-            })
-        })
-       }
+       },
 }
 

@@ -15,8 +15,9 @@
   text-align: center;
   font-family:'Gotham';
   color: #D6E1EF;
-      overflow: hidden;
-      background: linear-gradient(114.42deg, #191D20 -2.83%, #191D20 166.43%);
+  overflow: hidden;
+  background: linear-gradient(114.42deg, #262B2F -2.83%, #191D20 166.43%);
+
 }
 
 button{
@@ -39,6 +40,6 @@ a:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #191D20 ;
+  background: linear-gradient(114.42deg, #262B2F -2.83%, #191D20 166.43%);
 
 }

@@ -9,7 +9,9 @@ export default function Main() {
     const [repos,setRepos] = useState([])
     const [redirect,setRedirect] = useState(false);
     const [load,setLoad] = useState(true)
-const [display,setDisplay] = useState('flex')
+    const [display,setDisplay] = useState('flex');
+
+    console.log(repos)
 
     useEffect(() => {
         axios.post('http://localhost:3002/api/artist/',{"token":"09071993"}).then((response) => {
