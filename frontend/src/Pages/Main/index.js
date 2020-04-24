@@ -1,4 +1,6 @@
 import React,{useState,useEffect} from 'react';
+import {addTrack} from '../../Store/actions'
+import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import { Loader } from 'semantic-ui-react'
@@ -11,7 +13,14 @@ export default function Main() {
     const [load,setLoad] = useState(true)
     const [display,setDisplay] = useState('flex');
 
-    console.log(repos)
+    // console.log(repos)
+
+    const dispatch = useDispatch()
+
+    function loadTracks(track){
+
+        dispatch(addTrack(track))
+    }
 
     useEffect(() => {
         axios.post('http://localhost:3002/api/artist/',{"token":"09071993"}).then((response) => {
@@ -36,7 +45,7 @@ export default function Main() {
                 {repos.map((item)=>{
                     return(
                         <Link to={`/artist/${item.id_artista}`}>
-                        <div className="box_artist">
+                        <div className="box_artist" onClick={loadTracks}>
                             <div className="photo_artist"><img src={item.foto_artista} alt="Artist"/></div>
                             <div className="name_artist">{item.nome_artista}</div>
                             <div className="genre_artist">{item.genero_artista}</div>

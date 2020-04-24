@@ -16,8 +16,7 @@ const INITIAL_STATE = {
 export default function rootReducer(state = INITIAL_STATE, action){
     switch(action.type){
         case 'ADD_TRACK':
-            console.log(state)
-            return{...state, music:[action.music]};
+            return{...state, music:[action.payload]};
             
             default:
                 return state;

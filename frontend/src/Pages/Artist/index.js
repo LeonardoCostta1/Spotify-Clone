@@ -4,11 +4,13 @@ import axios from 'axios'
 import play from '../../assets/img/play.svg'
 import heart from '../../assets/img/heart.svg'
 import likedo from '../../assets/img/like.svg'
-import {useDispatch} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import $ from 'jquery'
 import {useParams} from 'react-router-dom'
 import { Loader } from 'semantic-ui-react'
+
+import {addTrack} from '../../Store/actions/index'
 
 export default function Artist() {
 
@@ -21,6 +23,8 @@ const [load,setLoad] = useState(true)
 const [display,setDisplay] = useState('flex')
 
 let { id } = useParams();
+
+const dispatch = useDispatch()
 
   useEffect(()=>{
 
@@ -50,24 +54,25 @@ let { id } = useParams();
 
         setTracks(response.data[2]);
 
-
         setLoad(false)
 
         setDisplay('none')
 
       }
     }).catch((err)=>{
-
           document.addEventListener(err,setRedirect(true))
-          
+  
         })
 
   },[id]);
 
-  const dispatch = useDispatch()
+  const musicState = useSelector(state=>{
+    return state
+  })
 
-  function addTrack(track){
-    dispatch({type:"ADD_TRACK", music:track})
+  function addTrackArtist(track){
+    dispatch(addTrack(track))
+    dispatch({type:"PLAYING", play:1})
   }
 
 
@@ -82,10 +87,10 @@ let { id } = useParams();
 
           {artist.map((art)=>{
             return(
-              <div className="top_container">
+              <div  className="top_container">
               <div className="artist_photo_wrapper">
               <div className="artist_photo">
-                <img src={art.foto_artista} alt="artista"/>
+                <img key={art.id_artista} src={art.foto_artista} alt="artista"/>
               </div>
             </div>
                 <div className="artist_info_wrapper">
@@ -126,7 +131,7 @@ let { id } = useParams();
       
               {tracks.map((item)=>{
                 return(
-                  <div className="track_playlist"onClick={()=> addTrack({ 
+                  <div className="track_playlist"onClick={()=> addTrackArtist({ 
                     
                   track:item.url,
                   musica:item.nome_musica,
