@@ -4,7 +4,7 @@ import'./style.css';
 import logo from '../../assets/img/spotify-brands.svg'
 import user from '../../assets/img/cover.jpg'
 import {Link} from 'react-router-dom'
-import { Dropdown } from 'semantic-ui-react'
+// import { Dropdown } from 'semantic-ui-react'
 
 export default function Menu() {
 
@@ -31,13 +31,13 @@ export default function Menu() {
                 <img src={user} alt="spotify"/>
             </div>
            
-            <Dropdown text='Leonardo'>
+            {/* <Dropdown text='Leonardo'>
                 <Dropdown.Menu>
                     <Dropdown.Item text='Account' />
                     <Dropdown.Item text='Log-out' />
                
                 </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
 
             </div>
         </div>

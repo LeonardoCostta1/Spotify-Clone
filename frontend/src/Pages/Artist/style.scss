@@ -78,6 +78,7 @@ $colorSpotifyHover:#FFA05C;
                     display: flex;
                     align-items:center;
                     justify-content: center;
+                    cursor: pointer;
             
                 }
                 .name_artist{
@@ -297,9 +298,6 @@ $colorSpotifyHover:#FFA05C;
                     font-family: 'Open Sans', sans-serif;
                     font-weight: bold;
                     font-size: 12px;
-                        .like{
-
-                        }
                         button{
                             margin-left: 10px;
                             border: none;

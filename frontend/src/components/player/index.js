@@ -9,6 +9,8 @@ import pauseImg from '../../assets/img/pause.svg'
 import nextImg from '../../assets/img/next.svg'
 import volumeImg from '../../assets/img/volume.svg'
 
+import secondsToMinutes from "../../Utils/duration";
+
 export default function Player() {
 
     const dispatch = useDispatch()
@@ -17,91 +19,117 @@ export default function Player() {
     const [ next] = useState(nextImg);
     const [ volume] = useState(volumeImg);
 
+    const [ duration, setDuration] = useState('00:00');
+    const [ currentTime, setcurrentTime] = useState('00:00');
+
     const track = useSelector(state =>{
-        return state.rootReducer.music
+        return state.spotify.album[0]
+    });
+
+    const index = useSelector(state=>{
+        return state.spotify.index
     })
-    let nt = 0
+
     const isPlaying = useSelector( state =>{
-        return  state.isplaying.playing
+        return  state.spotify.playing
     })
-  
 
-    function togglePlay(){
 
-        if(isPlaying === 0){
-            play()
+    const isOpen = useSelector( state =>{
+        return  state.spotify.open
+    })
+
+    function play(){
+        const audioEl = document.getElementsByClassName("audio")[0]
+        audioEl.play()
+    }
+
+    function pause(){
+        const audioEl = document.getElementsByClassName("audio")[0]
+        audioEl.pause()
+    }
+
+    function nextTrack(){ 
+   
+        if(index > track.length - 2){
+            dispatch({type:"INDEX", payload:0})
+            dispatch({type:'PLAYING',play:1})
         }else{
-            pause()
+            dispatch({type:'NEXT'})
+            dispatch({type:'PLAYING',play:1})
+        }
+    }
+
+    function prevTrack(){ 
+   
+        if(index < 1){
+            dispatch({type:"INDEX", payload:track.length - 1})
+            dispatch({type:'PLAYING',play:1})
+        }else{
+            dispatch({type:'PREV'})
+            dispatch({type:'PLAYING',play:1})
         }
 
-          }
+    }
 
-         function play(){
+    function playRelative(){isPlaying === 0 ? pause() : play()}
+
+    function togglePlay(){
+        if(isPlaying === 0){
+            play()
             dispatch({type:'PLAYING',play:1})
-            const audioEl = document.getElementsByClassName("audio")[0]
-            audioEl.play()
-          }
-
-        function pause(){
+        }else{
+            pause()
             dispatch({type:'PLAYING',play:0})
-            const audioEl = document.getElementsByClassName("audio")[0]
-            audioEl.pause()
-          }
+        }
+    }
 
-          function nextTrack(){
-            nt++
-            
-            const audioEl = document.getElementsByClassName("audio")[0]
-            audioEl.play()
-            alert(nt)
-          }
+    function time(){
+        const audioEl = document.getElementsByClassName("audio")[0]
+        secondsToMinutes(audioEl.duration);
+        setDuration(secondsToMinutes(audioEl.duration))
+        setcurrentTime(secondsToMinutes(audioEl.currentTime))
+    }
 
-          useEffect(()=>{
-            const audioEl = document.getElementsByClassName("audio")[0]
-            audioEl.play()
-          },[track])
 
-          
+    useEffect(()=>{
+        playRelative()
+        setTimeout(()=>{
+            time()
+        },1000)
+    },[index])
+
   return (
-    <div className="player_wrapper">
-        {track.map((track)=>{
-        return(
-            <>
+    <div className="player_wrapper" >
 
-        <audio className="audio" src={track.track}/>
+        <audio className="audio" src={track[index].url}/>
  
         <div className="info_music_container">
             <div className="info_wrapper">
                 <div className="cover">
-                <img src={track.album} alt="prev"/>
+                <img src={track[index].foto_musica} alt="prev"/>
                 </div>
                 <div className="info">
-                <div className="music">{track.musica}</div>
-                <div className="artist">{track.artist}</div>
+                <div className="music">{track[index].nome_musica}</div>
+                <div className="artist">{track[index].artista_musica}</div>
                 </div>
 
             </div>
         </div>
-        </>
-         )
-        })} 
         <div className="player_container">
             <div className="player_buttons_wrapper">
-                <button><img src={prev} alt="prev"/></button>
+                <button onClick={prevTrack}><img src={prev} alt="prev"/></button>
                 <button onClick={togglePlay}><img src={isPlaying === 0 ? playImg : pauseImg} alt="play"/></button>
                 <button onClick={nextTrack}><img src={next} alt="prev"/></button>
             </div>
             <div className="seekbar_wrapper">
-
                 <div className="seek_container">
-                    <div className="time_music">0:20</div>
+                    <div className="time_music">{currentTime}</div>
                     <div className="seek_bg">
                     <div className="seek"></div>
                     </div>
-                    <div className="time_music">3:00</div>
+                    <div className="time_music">{duration}</div>
                 </div>
-
-
             </div>
         </div>
         <div className="volume_container">

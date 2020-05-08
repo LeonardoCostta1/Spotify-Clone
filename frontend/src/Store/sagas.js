@@ -1,17 +1,20 @@
 
- import {takeEvery,put} from "redux-saga/effects";
+ import {call,takeEvery,put} from "redux-saga/effects";
+ import{ getData }from '../Services/data'
 
 
-function* asyncAddTrack(action){
+function* getApiData(action){
+
+    const response = yield call(getData)
+    console.log(response)
   
-    yield put({type:'ADD_TRACK',payload:action.payload})
-    console.log(action.payload)
+    yield put({type:'ADD_TRACK',payload:response})
 
 }
 
 
 export default function* root() {
-    yield takeEvery ('ASYNC_ADD_TRACK', asyncAddTrack)
+    yield takeEvery ('ASYNC_ADD_TRACK', getApiData)
 
   }
 

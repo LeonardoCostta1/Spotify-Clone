@@ -4,13 +4,11 @@ import axios from 'axios'
 import play from '../../assets/img/play.svg'
 import heart from '../../assets/img/heart.svg'
 import likedo from '../../assets/img/like.svg'
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import $ from 'jquery'
+
 import {useParams} from 'react-router-dom'
 import { Loader } from 'semantic-ui-react'
-
-import {addTrack} from '../../Store/actions/index'
 
 export default function Artist() {
 
@@ -27,16 +25,6 @@ let { id } = useParams();
 const dispatch = useDispatch()
 
   useEffect(()=>{
-
-    $(document).ready(function(){
-
-      $('.overview_menu ul li').click(function(){
-
-        $('ul li').removeClass("active");
-
-        $(this).addClass("active");
-    });
-    });
 
 
     axios.get(`http://localhost:3002/api/profile/${id}`)
@@ -60,22 +48,24 @@ const dispatch = useDispatch()
 
       }
     }).catch((err)=>{
-          document.addEventListener(err,setRedirect(true))
-  
+          // document.addEventListener(err,setRedirect(true))
         })
-
   },[id]);
 
-  const musicState = useSelector(state=>{
-    return state
-  })
-
-  function addTrackArtist(track){
-    dispatch(addTrack(track))
+  function addAlbum(){
+    dispatch({type:'ADD_ALBUM',payload:tracks});
     dispatch({type:"PLAYING", play:1})
+    dispatch({type:"OPNE", payload:1})
   }
 
+  
+  function addTrackArtist(track){
 
+    dispatch({type:"PLAYING", play:1})
+    dispatch({type:"INDEX", payload:track})
+
+
+  }
       if(!redirect){
         return (
           
@@ -85,9 +75,9 @@ const dispatch = useDispatch()
             </div>
 
 
-          {artist.map((art)=>{
+          {artist.map((art,index)=>{
             return(
-              <div  className="top_container">
+              <div key={index}  className="top_container">
               <div className="artist_photo_wrapper">
               <div className="artist_photo">
                 <img key={art.id_artista} src={art.foto_artista} alt="artista"/>
@@ -95,10 +85,10 @@ const dispatch = useDispatch()
             </div>
                 <div className="artist_info_wrapper">
                 <div className="artist_container">
-                  <div className="title_area">artist</div>
+                  <div className="title_area" >artist</div>
                    <div className="name_artist">{art.nome_artista}</div>
                   <div className="button_wrapper">
-                    <button>Play</button>
+                    <button onClick={addAlbum}>Play</button>
                     <button>seguir</button>
                     <button>...</button>
                     <button><img src={heart} alt="like"/></button>
@@ -109,8 +99,6 @@ const dispatch = useDispatch()
 
             )
           })}
-
-
 
           <div className="overview_wrapper">
             <div className="overview_menu">
@@ -129,14 +117,9 @@ const dispatch = useDispatch()
               <div className="title_category">liked</div>
               </div>
       
-              {tracks.map((item)=>{
+              {tracks.map((item,index)=>{
                 return(
-                  <div className="track_playlist"onClick={()=> addTrackArtist({ 
-                    
-                  track:item.url,
-                  musica:item.nome_musica,
-                  artist:item.artista_musica,
-                  album:item.foto_musica})}>
+                  <div key={index}  className="track_playlist"onClick={()=> addTrackArtist(index)}>
 
                   <div className="left">
                     <div className='cover'>
@@ -154,9 +137,6 @@ const dispatch = useDispatch()
                 )
       
               })}
-      
-      
-      
             </div>
 
             
@@ -169,9 +149,9 @@ const dispatch = useDispatch()
       
               <div className="albuns_wrapper">
 
-                {album.map((alb)=>{
+                {album.map((alb,index)=>{
                   return(
-                    <div className='albun_container'>
+                    <div key={index}  className='albun_container'>
     
                     <div className="left">
                       <div className="cover">
@@ -185,16 +165,10 @@ const dispatch = useDispatch()
                     <div className="right">
                       <div className="full_tracks">{alb.num_faixas_album}</div>
                     </div>
-           
                   </div>
                   )
                 })}
-      
-
-      
-
-              </div>
-      
+              </div>     
             </div>
           </div>
             

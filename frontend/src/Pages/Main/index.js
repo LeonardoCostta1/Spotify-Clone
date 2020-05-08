@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import {addTrack} from '../../Store/actions'
 import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
@@ -9,17 +8,15 @@ import axios from 'axios'
 import play from '../../assets/img/playa.svg';
 export default function Main() {
     const [repos,setRepos] = useState([])
-    const [redirect,setRedirect] = useState(false);
+    const [redirect] = useState(false);
     const [load,setLoad] = useState(true)
     const [display,setDisplay] = useState('flex');
-
-    // console.log(repos)
 
     const dispatch = useDispatch()
 
     function loadTracks(track){
+        dispatch({type:'ASYNC_ADD_TRACK',payload:track});
 
-        dispatch(addTrack(track))
     }
 
     useEffect(() => {
@@ -27,10 +24,12 @@ export default function Main() {
             setRepos(response.data); 
             setLoad(false)
             setDisplay('none')
+            console.log(repos)
         }).catch((err)=>{
-            document.addEventListener(err,setRedirect(true));
+            // document.addEventListener(err,setRedirect(true));
         })
       }, []);
+
       if(redirect){
         return <Redirect to='/error'/>
       }else{
@@ -42,10 +41,10 @@ export default function Main() {
                 <div className="main_container">
                     <div className="title_category">Recently played</div>
                     <div className="cards_artist">
-                {repos.map((item)=>{
+                {repos.map((item,index)=>{
                     return(
-                        <Link to={`/artist/${item.id_artista}`}>
-                        <div className="box_artist" onClick={loadTracks}>
+                        <Link key={index} to={`/artist/${item.id_artista}`}>
+                        <div key={index}  className="box_artist" onClick={loadTracks}>
                             <div className="photo_artist"><img src={item.foto_artista} alt="Artist"/></div>
                             <div className="name_artist">{item.nome_artista}</div>
                             <div className="genre_artist">{item.genero_artista}</div>
