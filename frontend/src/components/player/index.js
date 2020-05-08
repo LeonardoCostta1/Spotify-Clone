@@ -34,11 +34,6 @@ export default function Player() {
         return  state.spotify.playing
     })
 
-
-    const isOpen = useSelector( state =>{
-        return  state.spotify.open
-    })
-
     function play(){
         const audioEl = document.getElementsByClassName("audio")[0]
         audioEl.play()

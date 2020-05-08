@@ -24,9 +24,9 @@ export default function Main() {
             setRepos(response.data); 
             setLoad(false)
             setDisplay('none')
-            console.log(repos)
+            
         }).catch((err)=>{
-            // document.addEventListener(err,setRedirect(true));
+            console.log(err)
         })
       }, []);
 
