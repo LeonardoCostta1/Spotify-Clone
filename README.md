@@ -9,7 +9,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 **Frontend**   
 * Reactjs   
 * Redux   
-* Redux Persist   
+* Redux Persist 
+* Redux Saga
 * React Router Dom   
 * SASS   
 * Axios   
