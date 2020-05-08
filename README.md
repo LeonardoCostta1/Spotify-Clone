@@ -1,7 +1,7 @@
-# Spotify-Clone
+# Spotify Clone
 
 
-![Screenshot](https://user-images.githubusercontent.com/37845957/81293577-ed7fb680-9043-11ea-8be1-2b53ee489467.png)
+![Screenshot](https://user-images.githubusercontent.com/37845957/81310377-625deb00-905a-11ea-87b9-d6e5764b1631.png)
 
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -22,8 +22,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * Nodemon   
 
 ## Projeto
-neste projeto desenvolvi uma parte de um ecomerce comntendo a listagem de produtos, visualição dos detalhes do produto e o shopping cart 
-onde podemos listar todos os produtos que desejamos comprar e fazer o calculo do valor total da compra.
+neste projeto desenvolvi um clone do spotofy.
 
 ## Como Utilizar
 
@@ -50,9 +49,9 @@ para baixar todas as dependencias do projeto
 ### `yarn start`
 
 Executa a API no modo de desenvolvimento.
-Abra http://localhost:3001 para realizar as calls.
+Abra http://localhost:3002 para realizar as calls.
 _______________________________________________________
 
 ### **DATABASE MySQL**
 Faça a importação do banco de dados mysql
-+ arquivo disponibilizado na  raiz do projeto - **ecommerce_produtos.sql**
++ arquivo disponibilizado na  raiz do projeto - **Spotify DB**
